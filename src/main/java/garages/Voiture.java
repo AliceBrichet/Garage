@@ -94,6 +94,7 @@ public class Voiture {
 	public void imprimeStationnements(PrintStream out) {
 		Set<Garage> g=garagesVisites();
       	Iterator it = g.iterator();
+		out.println("<pre>");  
       	while(it.hasNext())
 		{
 			Garage garage= (Garage) it.next();
@@ -102,10 +103,11 @@ public class Voiture {
 			{
 				if(myStationnements.get(i).getGarage()==garage)
 				{
-					out.println(myStationnements.get(i).toString());
+					out.println("\t"+ myStationnements.get(i).toString());
 				}
 			}
 		}  
+		out.println("</pre>");  
 	}
 
 }
